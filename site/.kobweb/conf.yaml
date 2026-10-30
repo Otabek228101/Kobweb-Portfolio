@@ -1,5 +1,6 @@
 site:
-  title: "portfolio"
+  title: "Otabek - Portfolio"
+  basePath: "Kobweb-Portfolio"
 
 server:
   files:
