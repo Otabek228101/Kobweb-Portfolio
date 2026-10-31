@@ -5,6 +5,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import com.otabek.portfolio.components.widgets.ColorModeToggle
 import com.otabek.portfolio.data.Portfolio
 import com.varabyte.kobweb.compose.css.FontWeight
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
@@ -29,10 +30,10 @@ import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.dom.Header
 import org.jetbrains.compose.web.dom.Nav
 import org.jetbrains.compose.web.dom.Text
-import com.otabek.portfolio.components.widgets.ColorModeToggle
 
 private data class NavItem(val label: String, val path: String)
 
+// Пункты меню — единственное место, где они описаны
 private val navItems = listOf(
     NavItem("About", "/#about"),
     NavItem("Skills", "/#skills"),
@@ -52,13 +53,16 @@ fun NavHeader() {
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Link("/", Portfolio.name, Modifier.fontWeight(FontWeight.Bold))
+
             Row(Modifier.gap(1.cssRem), verticalAlignment = Alignment.CenterVertically) {
+                // Широкий экран: горизонтальное меню
                 Nav(Modifier.displayIfAtLeast(Breakpoint.MD).toAttrs()) {
                     NavLinks(vertical = false)
                 }
 
                 ColorModeToggle()
 
+                // Узкий экран: кнопка-бургер
                 Button(
                     onClick = { menuOpen = !menuOpen },
                     modifier = Modifier.displayUntil(Breakpoint.MD).attrsModifier {
@@ -68,6 +72,12 @@ fun NavHeader() {
                 ) {
                     Text(if (menuOpen) "✕" else "☰")
                 }
+            }
+        }
+
+        if (menuOpen) {
+            Nav(Modifier.fillMaxWidth().padding(top = 1.cssRem).toAttrs()) {
+                NavLinks(vertical = true, onNavigate = { menuOpen = false })
             }
         }
     }
