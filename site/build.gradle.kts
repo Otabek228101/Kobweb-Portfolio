@@ -1,4 +1,5 @@
 import com.varabyte.kobweb.gradle.application.util.configAsKobwebApplication
+import kotlinx.html.meta
 
 plugins {
     alias(libs.plugins.kotlin.multiplatform)
@@ -13,7 +14,13 @@ version = "1.0-SNAPSHOT"
 kobweb {
     app {
         index {
-            description.set("Powered by Kobweb")
+            description.set("Портфолио Otabek: Kotlin, Go, Dart, DevOps и 3D.")
+            lang.set("ru")
+            head.add {
+                meta { attributes["property"] = "og:type"; content = "website" }
+                meta { attributes["property"] = "og:url"; content = "https://otabek228101.github.io/Kobweb-Portfolio/" }
+                meta { attributes["property"] = "og:image"; content = "https://otabek228101.github.io/Kobweb-Portfolio/images/og.png" }
+            }
         }
     }
 }
