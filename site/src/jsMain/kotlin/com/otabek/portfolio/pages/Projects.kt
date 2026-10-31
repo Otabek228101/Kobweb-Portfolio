@@ -11,6 +11,7 @@ import com.varabyte.kobweb.core.layout.Layout
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.Text
+import com.varabyte.kobweb.compose.ui.modifiers.padding
 
 @Page
 @Layout(".components.layouts.PageLayout")
@@ -18,6 +19,8 @@ import org.jetbrains.compose.web.dom.Text
 fun ProjectsPage() {
     H1 { Text("Projects") }
     Column(Modifier.gap(1.5.cssRem)) {
-        Portfolio.projects.forEach { project -> ProjectCard(project) }
+        Portfolio.projects.forEach { project ->
+        ProjectCard(project, Modifier.padding(2.cssRem))
+}
     }
 }

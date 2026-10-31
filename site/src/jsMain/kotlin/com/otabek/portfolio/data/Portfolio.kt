@@ -7,6 +7,7 @@ data class Project(
     val repoUrl: String,
     val demoUrl: String? = null,     
     val imagePath: String? = null,   
+    val repoLabel: String = "Code",
     val featured: Boolean = false,   
 )
 
@@ -42,6 +43,8 @@ object Portfolio {
             tags = listOf("Blender", "Substance Painter", "Marmoset Toolbag"),
             repoUrl = "https://www.artstation.com/artwork/QKG1LL",
             demoUrl = "https://cdna.artstation.com/p/assets/images/images/082/904/896/large/otabek-1.jpg?1734257013",
+            imagePath = "/images/ak-47.png",
+            repoLabel = "Artstation",
             featured = true,
         ),
         Project(
@@ -56,6 +59,8 @@ object Portfolio {
             tags = listOf("Blender", "Substance Painter", "Marmoset Toolbag"),
             repoUrl = "https://www.artstation.com/artwork/QKG1LL",
             demoUrl = "https://cdnb.artstation.com/p/assets/images/images/064/849/641/large/den-228-12.jpg?1688912374",
+            imagePath = "/images/saiga-12.png",
+            repoLabel = "Artstation",
             featured = true,
         ),
     )

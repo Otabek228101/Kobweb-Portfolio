@@ -12,7 +12,6 @@ import org.jetbrains.compose.web.css.cssRem
 @Composable
 fun ProjectsSection() {
     SectionContainer(id = "projects", title = "Projects") {
-        // Сетку 1/2/3 колонки сделаем в задаче 8
         Column(Modifier.gap(1.5.cssRem)) {
             Portfolio.projects.forEach { project -> ProjectCard(project) }
         }
