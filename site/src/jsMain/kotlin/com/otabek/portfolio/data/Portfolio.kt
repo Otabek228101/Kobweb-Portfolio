@@ -23,7 +23,7 @@ data class SocialLink(val label: String, val url: String)
 
 object Portfolio {
     const val name = "Otabek"
-    const val role = "Kotlin Developer & SG Generalist & DevOps & Golang Developer"
+    const val role = "Kotlin Developer & CG Generalist & DevOps & Golang Developer"
     const val tagline = "Пишу приложения на Kotlin и Go, занимаюсь DevOps, так же делаю в 3D всякие штуки"
     const val bio = "Привет! Я Otabek, разработчик на Kotlin и Go, а также специалист по DevOps. У меня есть опыт работы с различными технологиями и инструментами, включая Jetpack Compose, Kobweb, Git и Linux. Я увлечен созданием качественных приложений и решением сложных задач в области разработки программного обеспечения. когда-нибудь я вернусь в 3D"
     const val email = "bekotabekbek56@gmail.com"

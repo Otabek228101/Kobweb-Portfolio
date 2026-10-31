@@ -15,6 +15,8 @@ import com.varabyte.kobweb.silk.components.text.SpanText
 import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.dom.Footer
 import kotlin.js.Date
+import com.varabyte.kobweb.compose.ui.modifiers.flexWrap
+import org.jetbrains.compose.web.css.FlexWrap
 
 @Composable
 fun SiteFooter() {
@@ -22,7 +24,7 @@ fun SiteFooter() {
 
     Footer(Modifier.fillMaxWidth().padding(1.cssRem).toAttrs()) {
         Row(
-            Modifier.fillMaxWidth(),
+            Modifier.fillMaxWidth().flexWrap(FlexWrap.Wrap).gap(1.cssRem),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically,
         ) {

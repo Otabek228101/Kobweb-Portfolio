@@ -17,17 +17,23 @@ import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
 import org.jetbrains.compose.web.dom.P
 import org.jetbrains.compose.web.dom.Text
+import com.otabek.portfolio.SplitStyle
+import com.varabyte.kobweb.compose.ui.toAttrs
+import com.varabyte.kobweb.silk.style.toModifier
+import org.jetbrains.compose.web.dom.Div
 
 @Composable
 fun AboutSection() {
     SectionContainer(id = "about", title = "About") {
         Row(Modifier.gap(2.cssRem), verticalAlignment = Alignment.CenterVertically) {
-            Image(
-                Portfolio.photoPath,
-                Portfolio.photoAlt,
-                Modifier.size(160.px).borderRadius(50.percent).objectFit(ObjectFit.Cover),
-            )
-            P { Text(Portfolio.bio) }
+            Div(SplitStyle.toModifier().toAttrs()) {
+                Image(
+                    Portfolio.photoPath,
+                    Portfolio.photoAlt,
+                    Modifier.size(160.px).borderRadius(50.percent).objectFit(ObjectFit.Cover),
+                )
+                P { Text(Portfolio.bio) }
+}
         }
     }
 }

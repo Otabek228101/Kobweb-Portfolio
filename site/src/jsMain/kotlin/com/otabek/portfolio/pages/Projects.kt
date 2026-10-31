@@ -12,15 +12,18 @@ import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.dom.H1
 import org.jetbrains.compose.web.dom.Text
 import com.varabyte.kobweb.compose.ui.modifiers.padding
+import com.varabyte.kobweb.compose.ui.modifiers.fillMaxWidth
+import com.varabyte.kobweb.silk.components.layout.SimpleGrid
+import com.varabyte.kobweb.silk.components.layout.numColumns
 
 @Page
 @Layout(".components.layouts.PageLayout")
 @Composable
 fun ProjectsPage() {
     H1 { Text("Projects") }
-    Column(Modifier.gap(1.5.cssRem)) {
+    SimpleGrid(numColumns(base = 1, md = 2, lg = 3), Modifier.fillMaxWidth().gap(1.5.cssRem)) {
         Portfolio.projects.forEach { project ->
-        ProjectCard(project, Modifier.padding(2.cssRem))
-}
-    }
+            ProjectCard(project, Modifier.padding(2.cssRem))
+        }
+    }   
 }
