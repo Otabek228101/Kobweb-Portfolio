@@ -21,10 +21,12 @@ import org.jetbrains.compose.web.dom.Nav
 private data class NavItem(val label: String, val path: String)
 
 private val navItems = listOf(
-    NavItem("Home", "/"),
-    NavItem("Projects", "/projects"),
+    NavItem("About", "/#about"),
+    NavItem("Skills", "/#skills"),
+    NavItem("Projects", "/#projects"),
+    NavItem("Contact", "/#contact"),
+    NavItem("All projects", "/projects"),
 )
-
 @Composable
 fun NavHeader() {
     val ctx = rememberPageContext()

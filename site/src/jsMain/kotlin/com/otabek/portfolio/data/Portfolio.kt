@@ -24,8 +24,10 @@ object Portfolio {
     const val name = "Otabek"
     const val role = "Kotlin Developer & SG Generalist & DevOps & Golang Developer"
     const val tagline = "Пишу приложения на Kotlin и Go, занимаюсь DevOps, так же делаю в 3D всякие штуки"
-    const val bio = "Привет! Я Otabek, разработчик на Kotlin и Go, а также специалист по DevOps. У меня есть опыт работы с различными технологиями и инструментами, включая Jetpack Compose, Kobweb, Git и Linux. Я увлечен созданием качественных приложений и решением сложных задач в области разработки программного обеспечения."
+    const val bio = "Привет! Я Otabek, разработчик на Kotlin и Go, а также специалист по DevOps. У меня есть опыт работы с различными технологиями и инструментами, включая Jetpack Compose, Kobweb, Git и Linux. Я увлечен созданием качественных приложений и решением сложных задач в области разработки программного обеспечения. когда-нибудь я вернусь в 3D"
     const val email = "bekotabekbek56@gmail.com"
+    const val photoPath = "/images/profile.png"
+    const val photoAlt = "Фото: Otabek"
 
     val projects = listOf(
         Project(
@@ -35,17 +37,25 @@ object Portfolio {
             repoUrl = "https://github.com/Otabek228101/Kobweb-Portfolio",
         ),
         Project(
+            title = "Ak-47",
+            description = "калаш просто калаш",
+            tags = listOf("Blender", "Substance Painter", "Marmoset Toolbag"),
+            repoUrl = "https://www.artstation.com/artwork/QKG1LL",
+            demoUrl = "https://cdna.artstation.com/p/assets/images/images/082/904/896/large/otabek-1.jpg?1734257013",
+            featured = true,
+        ),
+        Project(
             title = "KMP Portfolio",
             description = "Портфолио-приложение на Compose Multiplatform для Android и iOS.",
             tags = listOf("Kotlin", "KMP", "Compose"),
             repoUrl = "https://github.com/Otabek228101/Portfolio",
         ),
         Project(
-            title = "Ak-47",
-            description = "калаш просто калаш",
+            title = "Saiga-12",
+            description = "сделано на базе AK-47, но стреляет патронами 12 калибра",
             tags = listOf("Blender", "Substance Painter", "Marmoset Toolbag"),
             repoUrl = "https://www.artstation.com/artwork/QKG1LL",
-            imagePath = "https://cdna.artstation.com/p/assets/images/images/082/904/896/large/otabek-1.jpg?1734257013",
+            demoUrl = "https://cdnb.artstation.com/p/assets/images/images/064/849/641/large/den-228-12.jpg?1688912374",
             featured = true,
         ),
     )
@@ -53,13 +63,18 @@ object Portfolio {
     val skills = listOf(
         Skill("Kotlin", SkillGroup.Languages),
         Skill("Go", SkillGroup.Languages),
+        Skill("Dart", SkillGroup.Languages),
         Skill("Jetpack Compose", SkillGroup.Frameworks),
         Skill("Kobweb", SkillGroup.Frameworks),
+        Skill("Flutter", SkillGroup.Frameworks),
         Skill("Git", SkillGroup.Tools),
         Skill("Linux", SkillGroup.Tools),
+        Skill("Docker", SkillGroup.Tools),
+        Skill("Kubernetes", SkillGroup.Tools),
         Skill("Blender", SkillGroup.Tools),
         Skill("Substance Painter", SkillGroup.Tools),
         Skill("Marmoset Toolbag", SkillGroup.Tools),
+        Skill("Houdini", SkillGroup.Tools),
     )
 
     val socials = listOf(
