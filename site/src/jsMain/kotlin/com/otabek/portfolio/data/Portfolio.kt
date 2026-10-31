@@ -27,9 +27,9 @@ object Portfolio {
     const val tagline = "Пишу приложения на Kotlin и Go, занимаюсь DevOps, так же делаю в 3D всякие штуки"
     const val bio = "Привет! Я Otabek, разработчик на Kotlin и Go, а также специалист по DevOps. У меня есть опыт работы с различными технологиями и инструментами, включая Jetpack Compose, Kobweb, Git и Linux. Я увлечен созданием качественных приложений и решением сложных задач в области разработки программного обеспечения. когда-нибудь я вернусь в 3D"
     const val email = "bekotabekbek56@gmail.com"
-    const val photoPath = "/images/profile.png"
+    const val photoPath = "/images/profile.webp"
     const val photoAlt = "Фото: Otabek"
-
+    const val resumePath = "/resume.pdf"
     val projects = listOf(
         Project(
             title = "Kobweb Portfolio",
@@ -43,7 +43,7 @@ object Portfolio {
             tags = listOf("Blender", "Substance Painter", "Marmoset Toolbag"),
             repoUrl = "https://www.artstation.com/artwork/QKG1LL",
             demoUrl = "https://cdna.artstation.com/p/assets/images/images/082/904/896/large/otabek-1.jpg?1734257013",
-            imagePath = "/images/ak-47.png",
+            imagePath = "/images/ak-47.webp",
             repoLabel = "Artstation",
             featured = true,
         ),
@@ -57,9 +57,9 @@ object Portfolio {
             title = "Saiga-12",
             description = "сделано на базе AK-47, но стреляет патронами 12 калибра",
             tags = listOf("Blender", "Substance Painter", "Marmoset Toolbag"),
-            repoUrl = "https://www.artstation.com/artwork/QKG1LL",
+            repoUrl = "https://www.artstation.com/artwork/w0v5gw",
             demoUrl = "https://cdnb.artstation.com/p/assets/images/images/064/849/641/large/den-228-12.jpg?1688912374",
-            imagePath = "/images/saiga-12.png",
+            imagePath = "/images/saiga-12.webp",
             repoLabel = "Artstation",
             featured = true,
         ),
