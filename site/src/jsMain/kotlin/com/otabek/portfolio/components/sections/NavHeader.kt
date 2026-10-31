@@ -29,6 +29,7 @@ import org.jetbrains.compose.web.css.cssRem
 import org.jetbrains.compose.web.dom.Header
 import org.jetbrains.compose.web.dom.Nav
 import org.jetbrains.compose.web.dom.Text
+import com.otabek.portfolio.components.widgets.ColorModeToggle
 
 private data class NavItem(val label: String, val path: String)
 
@@ -51,25 +52,22 @@ fun NavHeader() {
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Link("/", Portfolio.name, Modifier.fontWeight(FontWeight.Bold))
+            Row(Modifier.gap(1.cssRem), verticalAlignment = Alignment.CenterVertically) {
+                Nav(Modifier.displayIfAtLeast(Breakpoint.MD).toAttrs()) {
+                    NavLinks(vertical = false)
+                }
 
-            Nav(Modifier.displayIfAtLeast(Breakpoint.MD).toAttrs()) {
-                NavLinks(vertical = false)
-            }
+                ColorModeToggle()
 
-            Button(
-                onClick = { menuOpen = !menuOpen },
-                modifier = Modifier.displayUntil(Breakpoint.MD).attrsModifier {
-                    attr("aria-label", "Menu")
-                    attr("aria-expanded", menuOpen.toString())
-                },
-            ) {
-                Text(if (menuOpen) "✕" else "☰")
-            }
-        }
-
-        if (menuOpen) {
-            Nav(Modifier.displayUntil(Breakpoint.MD).padding(top = 1.cssRem).toAttrs()) {
-                NavLinks(vertical = true, onNavigate = { menuOpen = false })
+                Button(
+                    onClick = { menuOpen = !menuOpen },
+                    modifier = Modifier.displayUntil(Breakpoint.MD).attrsModifier {
+                        attr("aria-label", "Menu")
+                        attr("aria-expanded", menuOpen.toString())
+                    },
+                ) {
+                    Text(if (menuOpen) "✕" else "☰")
+                }
             }
         }
     }

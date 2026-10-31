@@ -35,6 +35,7 @@ import com.varabyte.kobweb.compose.ui.modifiers.height
 import com.varabyte.kobweb.compose.ui.modifiers.objectFit
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.compose.ui.modifiers.backgroundColor
+import com.varabyte.kobweb.silk.theme.colors.ColorMode
 
 sealed interface ProjectCardKind : ComponentKind
 
@@ -62,6 +63,7 @@ val FeaturedProjectCardVariant = ProjectCardStyle.addVariant {
 @Composable
 fun ProjectCard(project: Project, modifier: Modifier = Modifier) {
     val variant = if (project.featured) FeaturedProjectCardVariant else null
+    val colorMode = ColorMode.current  
 
     Column(ProjectCardStyle.toModifier(variant).gap(0.75.cssRem).then(modifier)) {
         project.imagePath?.let { path ->
@@ -73,9 +75,10 @@ fun ProjectCard(project: Project, modifier: Modifier = Modifier) {
                     .height(200.px)
                     .borderRadius(8.px)
                     .objectFit(ObjectFit.Contain)
-                    .backgroundColor(Color.rgb(0x2A2A2A)),
+                    .backgroundColor(if (colorMode.isLight) Color.rgb(0xEEEEEE) else Color.rgb(0x2A2A2A)),
             )
         }
+
         H3 { Text(project.title) }
         P { Text(project.description) }
         Row(Modifier.gap(0.5.cssRem).flexWrap(FlexWrap.Wrap)) {
